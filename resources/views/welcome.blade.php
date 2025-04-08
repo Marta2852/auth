@@ -7,5 +7,13 @@
 </head>
 <body>
     <h1>Welcome</h1>
+
+    @auth
+        <p>Sveiks, {{ Auth::user()->first_name}}</p>
+    @endauth
+
+    @guest
+        <p>Sveiks, viesi!</p>
+    @endguest
 </body>
 </html>
