@@ -10,10 +10,17 @@
 
     @auth
         <p>Sveiks, {{ Auth::user()->first_name}}</p>
+        
+
+        <form action="/logout" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit">Izrakstīties</button>
+        </form>
     @endauth
 
     @guest
         <p>Sveiks, viesi!</p>
+        <a href="/login">Pieslēgties</a>
     @endguest
 </body>
 </html>
